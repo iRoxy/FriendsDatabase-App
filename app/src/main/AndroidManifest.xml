@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="rlawrence.academy.develappme.friends" >
+
+    <permission android:name="rlawrence.academy.develappme.friends.provider.READWRITE" />
+    <uses-permission android:name="rlawrence.academy.develappme.friends.provider.READWRITE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.WithActionBar" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/add_friend_title">
+        </activity>
+        <activity
+            android:name=".EditActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/edit_friend_title">
+        </activity>
+        <activity
+            android:name=".SearchActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/search_friends_title">
+        </activity>
+        <provider
+            android:name="rlawrence.academy.develappme.friends.FriendsProvider"
+            android:authorities="rlawrence.academy.develappme.friends.provider"
+            android:exported="true"
+            android:readPermission="rlawrence.academy.develappme.friends.provider.READWRITE"
+            android:writePermission="rlawrence.academy.develappme.friends.provider.READWRITE"/>
+    </application>
+
+</manifest>
